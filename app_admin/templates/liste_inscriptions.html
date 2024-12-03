@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Inscriptions</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Colonne des Étudiants -->
+            <div class="col-md-6">
+                <h2 class="text-primary">Liste des Étudiants</h2>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Prénom</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for etudiant in etudiants %}
+                        <tr>
+                            <td>{{ etudiant.nom }}</td>
+                            <td>{{ etudiant.prenom }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Colonne des Enseignants -->
+            <div class="col-md-6">
+                <h2 class="text-primary">Liste des Enseignants</h2>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Prénom</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for enseignant in enseignants %}
+                        <tr>
+                            <td>{{ enseignant.nom }}</td>
+                            <td>{{ enseignant.prenom }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
